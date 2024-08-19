@@ -37,7 +37,7 @@ def calculateNewUser(qty_letters_usser):
 
 
 def getURL():
-    return f"{_base_url}{calculateNewUser(8)}"
+    return f"{_ip}{calculateNewUser(8)}"
 
 
 
@@ -49,7 +49,7 @@ for _ in range(1000):
     except:
         print(f"error:{getURL()}")
 
-    time.sleep(1)  # Espera 1 segundo entre recargas para no sobrecargar
+    time.sleep(5)  # Espera 1 segundo entre recargas para no sobrecargar
 
 # Cierra el navegador
 driver.quit()
