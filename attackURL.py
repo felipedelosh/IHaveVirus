@@ -11,7 +11,12 @@ values = [
     "0zNK8x040n85RsPDbQRlbw%3D%3D",
     "J0tGtZLaeppAA9svwVencw%3D%3D",
     "dZgngM70hemNUGuErnKGCA%3D%3D",
-    "MlFTGuXKlT25neTD1K7eBA%3D%3D"
+    "MlFTGuXKlT25neTD1K7eBA%3D%3D",
+    "dZgngM70hemNUGuErnKGCA%3D%3D",
+    "MlFTGuXKlT25neTD1K7eBA%3D%3D",
+    "F9K88mvr%2FweY1MNhqzmHQg%3D%3D",
+    "S9lR09RGUDftIPDo%2FHmcdA%3D%3D",
+    "mVqoaLB4bCGWfQIY7ZjJPw%3D%3D"
 ]
 
 
@@ -23,6 +28,8 @@ def decode_base64(encoded_str):
         return decoded_bytes.decode('utf-8', errors='ignore')
     except Exception as e:
         return f"Decoding failed: {e}"
+    
+    
 
 for i in values:
     decoded_fp = urllib.parse.unquote(i)

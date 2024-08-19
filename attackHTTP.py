@@ -48,9 +48,8 @@ def updateLOG():
         f.write(_LOGS_)
 
 
-# URL a la que deseas acceder
+# SITE URL PARAMS
 _ip = "http://89.208.107.49/"
-_base_url = "https://n0pkf36.findpubdue.live/"
 _FAKE_PAGES_LIST = [
     "findpubdue.live",
     "aycanrem.live",
@@ -115,7 +114,7 @@ for _ in range(1000000):
 
     # SAVE LOG
     updateLOG()
-    time.sleep(100)  # Espera 1 segundo entre recargas para no sobrecargar
+    time.sleep(50)  # Espera 1 segundo entre recargas para no sobrecargar
 
 # Cierra el navegador
 driver.quit()
