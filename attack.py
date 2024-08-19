@@ -18,7 +18,7 @@ https://n0pkf36.findpubdue.live/vnjpyomd/?u=63fkp0n&o=uh7pmz8&f=1&sid=t2~saav2u2
 """
 
 options = Options()
-options.headless = True  # change to execute only terminal
+options.headless = False
 
 # Inicializa el controlador de Firefox
 driver = webdriver.Firefox(options=options)
