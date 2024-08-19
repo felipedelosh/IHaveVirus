@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
+from selenium.common.exceptions import WebDriverException
 from datetime import datetime
 import time
 import random
@@ -104,17 +105,21 @@ for _ in range(1000000):
     _url = finalDestinationUrl()
     try:
         driver.get(_url)
-        _LOGS_ = _LOGS_ + f"get:{_url}\n"
-        _LOGS_ = _LOGS_ + f"currentURL:{driver.current_url}\n"
+        _LOGS_ += f"get:{_url}\n"
+        _LOGS_ += f"currentURL:{driver.current_url}\n"
         print(f"get:{_url}")
         print(f"currentURL:{driver.current_url}")
-    except:
-        _LOGS_ = _LOGS_ + f"error:{_url}\n"
-        print(f"error:{_url}")
+    except WebDriverException as e:
+        if "ERR_CERT_AUTHORITY_INVALID" in str(e) or "NET::ERR_CERT_DATE_INVALID" in str(e):
+            _LOGS_ += f"secure_connection_failed:{_url}\n"
+            print(f"secure_connection_failed:{_url}")
+        else:
+            _LOGS_ += f"error:{_url}\n"
+            print(f"error:{_url}")
 
     # SAVE LOG
     updateLOG()
-    time.sleep(50)  # Espera 1 segundo entre recargas para no sobrecargar
+    time.sleep(0.4)  # Espera 0.4 segundos entre recargas para no sobrecargar
 
 # Cierra el navegador
 driver.quit()
