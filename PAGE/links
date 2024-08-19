@@ -38,9 +38,11 @@ https://cr1dp7ohubcc73dkv990.primewallsecurity.co.in/04-direct/?cid=1212a4a3d472
 
 Server infraestructure:
 
-ROOT/media/media/dating/default/cs  ->> Contains css
+ROOT/media/dating/default/css  ->> Contains css
 ROOT/media/dating/default/js  ->> Contains js
+ROOT/media ->> Contains HTML
 ROOT/util  ->> Contains js
+ROOT/media/dating/sinderv2/images ->> Contains img
 
 
 IDS

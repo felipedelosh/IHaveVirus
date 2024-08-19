@@ -51,6 +51,14 @@ def updateLOG():
 # URL a la que deseas acceder
 _ip = "http://89.208.107.49/"
 _base_url = "https://n0pkf36.findpubdue.live/"
+_FAKE_PAGES_LIST = [
+    "findpubdue.live",
+    "aycanrem.live",
+    "lastwayking.live",
+    "kihisee.live"
+]
+_user = "63fkp0n"
+_o = "uh7pmz8"
 
 def calculateNewUser(qty_letters_usser):
     """
@@ -59,30 +67,55 @@ def calculateNewUser(qty_letters_usser):
     letters = ''.join(random.choice(string.ascii_lowercase) for _ in range(qty_letters_usser))
     return letters
 
+def generate_random_id(length=24):
+    prefix = f"t{random.randint(1, 4)}~"
+    characters = string.ascii_lowercase + string.digits
+    random_id = ''.join(random.choice(characters) for _ in range(length))
+    return prefix + random_id
+
+def generate_custom_fp(length=22):
+    characters = string.ascii_letters + string.digits
+    random_fp = ''.join(random.choice(characters) for _ in range(length))
+    return random_fp + '%3D%3D'
+
+def getSecurityToken():
+    """
+    The page contains a sid & fp loke a tokens
+    Exaple
+    &sid=t1~dem2e4bc4fujgn033wkb2r2u&fp=MlFTGuXKlT25neTD1K7eBA%3D%3D
+    """
+    return f"&sid={generate_random_id(24)}&fp={generate_custom_fp(22)}"
+
 
 def getURLByIp():
     return f"{_ip}{calculateNewUser(8)}"
 
+def getRndFakePage():
+    return random.choice(_FAKE_PAGES_LIST)
 
+# Examples
+# https://n0pkf36.kihisee.live/fqitthsw/?u=63fkp0n&o=uh7pmz8&f=1&sid=t4~gp4vdvsnabw0rlejkbh0kdt3&fp=i9Ev4R9boJ5ZBrUR1Q7nYw%3D%3D
+# https://n0pkf36.kihisee.live/ajewwcvw/?u=63fkp0n&o=uh7pmz8&f=1&sid=t4~gp4vdvsnabw0rlejkbh0kdt3&fp=PffWcRnbu79onJaibHwHdw%3D%3D
 def finalDestinationUrl():
-    return f"https://n0pkf36.{1}"
+    return f"https://n0pkf36.{getRndFakePage()}/{calculateNewUser(8)}/?u={_user}&o={_o}&f=1{getSecurityToken()}"
 
 
 # Recarga la página varias veces
-for _ in range(1000):
+for _ in range(1000000):
+    _url = finalDestinationUrl()
     try:
-        driver.get("https://n0pkf36.lastwayking.live/lqkcgvut/?u=63fkp0n&o=uh7pmz8&f=1&sid=t1~t0edj5cp4iejludsvza1vobl&fp=Md%2Bb%2FogcsL6hTN%2FIdl07EQ%3D%3D")
-        _LOGS_ = _LOGS_ + f"get:{getURLByIp()}\n"
+        driver.get(_url)
+        _LOGS_ = _LOGS_ + f"get:{_url}\n"
         _LOGS_ = _LOGS_ + f"currentURL:{driver.current_url}\n"
-        print(f"get:{getURLByIp()}")
+        print(f"get:{_url}")
         print(f"currentURL:{driver.current_url}")
     except:
-        _LOGS_ = _LOGS_ + f"error:{getURLByIp()}\n"
-        print(f"error:{getURLByIp()}")
+        _LOGS_ = _LOGS_ + f"error:{_url}\n"
+        print(f"error:{_url}")
 
     # SAVE LOG
     updateLOG()
-    time.sleep(120)  # Espera 1 segundo entre recargas para no sobrecargar
+    time.sleep(100)  # Espera 1 segundo entre recargas para no sobrecargar
 
 # Cierra el navegador
 driver.quit()
