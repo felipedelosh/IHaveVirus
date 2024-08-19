@@ -19,6 +19,8 @@ https://n0pkf36.findpubdue.live/vnjpymod/?u=63fkp0n&o=uh7pmz8&f=1&sid=t2~saav2u2
 https://n0pkf36.aycanrem.live/xyxnihui/?u=63fkp0n&o=uh7pmz8&f=1&sid=t4~kyaz4wemqibazztgozu52xnv&fp=6Hsu7We1SMxgE36BjBtYvw%3D%3D
 https://n0pkf36.aycanrem.live/fbnopstn/?u=63fkp0n&o=uh7pmz8&f=1&sid=t1~zfansszdwb3csgk5fbxp5v40&fp=0zNK8x040n85RsPDbQRlbw%3D%3D
 https://n0pkf36.lastwayking.live/vplsqjcq/?u=63fkp0n&o=uh7pmz8&f=1&sid=t2~3hentehcpiyfynvjwarxwsvm&fp=J0tGtZLaeppAA9svwVencw%3D%3D
+https://n0pkf36.lastwayking.live/ounuqvsi/?u=63fkp0n&o=uh7pmz8&f=1&sid=t1~dem2e4bc4fujgn033wkb2r2u&fp=dZgngM70hemNUGuErnKGCA%3D%3D
+https://n0pkf36.lastwayking.live/chdthuix/?u=63fkp0n&o=uh7pmz8&f=1&sid=t1~dem2e4bc4fujgn033wkb2r2u&fp=MlFTGuXKlT25neTD1K7eBA%3D%3D
 ...
 """
 
@@ -46,8 +48,6 @@ def updateLOG():
         f.write(_LOGS_)
 
 
-
-
 # URL a la que deseas acceder
 _ip = "http://89.208.107.49/"
 _base_url = "https://n0pkf36.findpubdue.live/"
@@ -67,8 +67,9 @@ def getURL():
 # Recarga la página varias veces
 for _ in range(1000):
     try:
-        driver.get(getURL())
+        driver.get("https://n0pkf36.lastwayking.live/lqkcgvut/?u=63fkp0n&o=uh7pmz8&f=1&sid=t1~t0edj5cp4iejludsvza1vobl&fp=Md%2Bb%2FogcsL6hTN%2FIdl07EQ%3D%3D")
         _LOGS_ = _LOGS_ + f"get:{getURL()}\n"
+        _LOGS_ = _LOGS_ + f"currentURL:{driver.current_url}\n"
         print(f"get:{getURL()}")
         print(f"currentURL:{driver.current_url}")
     except:
@@ -77,8 +78,7 @@ for _ in range(1000):
 
     # SAVE LOG
     updateLOG()
-
-    time.sleep(100)  # Espera 1 segundo entre recargas para no sobrecargar
+    time.sleep(10)  # Espera 1 segundo entre recargas para no sobrecargar
 
 # Cierra el navegador
 driver.quit()
