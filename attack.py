@@ -27,7 +27,6 @@ driver = webdriver.Firefox(options=options)
 # URL a la que deseas acceder
 _ip = "http://89.208.107.49/"
 _base_url = "https://n0pkf36.findpubdue.live/"
-_url= f"{_base_url}vnjpyomd"
 
 def calculateNewUser(qty_letters_usser):
     """
