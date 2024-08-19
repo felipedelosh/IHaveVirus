@@ -5,7 +5,7 @@ import random
 import string
 
 """
-Estoy siendo atacado todos los dóías por http://89.208.107.49
+Estoy siendo atacado todos los días por http://89.208.107.49
 Esto es para tratar de defenderme
 """
 
