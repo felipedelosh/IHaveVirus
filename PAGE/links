@@ -1,3 +1,4 @@
+PORT: 8081
 MAIN:
 
 https://n0pkf36.findpubdue.live
@@ -18,12 +19,7 @@ https://n0pkf36.lastwayking.live/ucwmgpqf/?u=63fkp0n&o=uh7pmz8&f=1&sid=t1~dem2e4
 
 DATA:
 
-?u=63fkp0n
-&o=uh7pmz8
-&f=1
-&sid=t1~t0edj5cp4iejludsvza1vobl
-t4~a4mtxyvvgg4cedvd4zg1m4ya
-&fp=Md%2Bb%2FogcsL6hTN%2FIdl07EQ%3D%3D
+(u, o, f, sid, fp)
 
 
 Javascripts:

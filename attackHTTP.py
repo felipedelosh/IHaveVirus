@@ -60,25 +60,29 @@ def calculateNewUser(qty_letters_usser):
     return letters
 
 
-def getURL():
+def getURLByIp():
     return f"{_ip}{calculateNewUser(8)}"
+
+
+def finalDestinationUrl():
+    return f"https://n0pkf36.{1}"
 
 
 # Recarga la página varias veces
 for _ in range(1000):
     try:
         driver.get("https://n0pkf36.lastwayking.live/lqkcgvut/?u=63fkp0n&o=uh7pmz8&f=1&sid=t1~t0edj5cp4iejludsvza1vobl&fp=Md%2Bb%2FogcsL6hTN%2FIdl07EQ%3D%3D")
-        _LOGS_ = _LOGS_ + f"get:{getURL()}\n"
+        _LOGS_ = _LOGS_ + f"get:{getURLByIp()}\n"
         _LOGS_ = _LOGS_ + f"currentURL:{driver.current_url}\n"
-        print(f"get:{getURL()}")
+        print(f"get:{getURLByIp()}")
         print(f"currentURL:{driver.current_url}")
     except:
-        _LOGS_ = _LOGS_ + f"error:{getURL()}\n"
-        print(f"error:{getURL()}")
+        _LOGS_ = _LOGS_ + f"error:{getURLByIp()}\n"
+        print(f"error:{getURLByIp()}")
 
     # SAVE LOG
     updateLOG()
-    time.sleep(10)  # Espera 1 segundo entre recargas para no sobrecargar
+    time.sleep(120)  # Espera 1 segundo entre recargas para no sobrecargar
 
 # Cierra el navegador
 driver.quit()
