@@ -22,6 +22,8 @@ https://n0pkf36.aycanrem.live/fbnopstn/?u=63fkp0n&o=uh7pmz8&f=1&sid=t1~zfansszdw
 https://n0pkf36.lastwayking.live/vplsqjcq/?u=63fkp0n&o=uh7pmz8&f=1&sid=t2~3hentehcpiyfynvjwarxwsvm&fp=J0tGtZLaeppAA9svwVencw%3D%3D
 https://n0pkf36.lastwayking.live/ounuqvsi/?u=63fkp0n&o=uh7pmz8&f=1&sid=t1~dem2e4bc4fujgn033wkb2r2u&fp=dZgngM70hemNUGuErnKGCA%3D%3D
 https://n0pkf36.lastwayking.live/chdthuix/?u=63fkp0n&o=uh7pmz8&f=1&sid=t1~dem2e4bc4fujgn033wkb2r2u&fp=MlFTGuXKlT25neTD1K7eBA%3D%3D
+https://search.rootyeprely.live/rixjttmh/?u1=d202mrd&o1=udrbv9v&f=1&sid=t2~aytpdsbwdvuar5n1yrrbidcx&fp=bAZ5KjEuNl%2BLTwcYkGFZrg%3D%3D
+https://search.rootyeprely.live/xrmsdmsj/?u1=d202mrd&o1=udrbv9v&f=1&sid=t4~e4n5atqi5oe035lmdixjiz1w&fp=116UeNVSgOWTIwhauBzE9w%3D%3D
 ...
 """
 
@@ -50,15 +52,18 @@ def updateLOG():
 
 
 # SITE URL PARAMS
-_ip = "http://89.208.107.49/"
+_ip = "89.208.107.49"
+
+# Never be same in the week
 _FAKE_PAGES_LIST = [
     "findpubdue.live",
     "aycanrem.live",
     "lastwayking.live",
-    "kihisee.live"
+    "kihisee.live",
+    "rootyeprely.live"
 ]
-_user = "63fkp0n"
-_o = "uh7pmz8"
+_user = "rixjttmh" # User change every week
+_o = "uh7pmz8" # O Change every week
 
 def calculateNewUser(qty_letters_usser):
     """
@@ -94,10 +99,11 @@ def getRndFakePage():
     return random.choice(_FAKE_PAGES_LIST)
 
 # Examples
-# https://n0pkf36.kihisee.live/fqitthsw/?u=63fkp0n&o=uh7pmz8&f=1&sid=t4~gp4vdvsnabw0rlejkbh0kdt3&fp=i9Ev4R9boJ5ZBrUR1Q7nYw%3D%3D
-# https://n0pkf36.kihisee.live/ajewwcvw/?u=63fkp0n&o=uh7pmz8&f=1&sid=t4~gp4vdvsnabw0rlejkbh0kdt3&fp=PffWcRnbu79onJaibHwHdw%3D%3D
+# IP+ USER + PARAMS
 def finalDestinationUrl():
-    return f"https://n0pkf36.{getRndFakePage()}/{calculateNewUser(8)}/?u={_user}&o={_o}&f=1{getSecurityToken()}"
+    # WARNING PARAMS CHANGE u > u1
+    # WARNING PARAMS CHANGE o > o1
+    return f"http://{_ip}/{calculateNewUser(8)}/?u1={_user}&o1={_o}&f=1{getSecurityToken()}"
 
 
 # Recarga la página varias veces
@@ -119,7 +125,7 @@ for _ in range(1000000):
 
     # SAVE LOG
     updateLOG()
-    time.sleep(0.4)  # Espera 0.4 segundos entre recargas para no sobrecargar
+    time.sleep(8)  # Espera 0.4 segundos entre recargas para no sobrecargar
 
 # Cierra el navegador
 driver.quit()
