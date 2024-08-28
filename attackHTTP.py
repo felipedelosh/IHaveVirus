@@ -24,6 +24,8 @@ https://n0pkf36.lastwayking.live/ounuqvsi/?u=63fkp0n&o=uh7pmz8&f=1&sid=t1~dem2e4
 https://n0pkf36.lastwayking.live/chdthuix/?u=63fkp0n&o=uh7pmz8&f=1&sid=t1~dem2e4bc4fujgn033wkb2r2u&fp=MlFTGuXKlT25neTD1K7eBA%3D%3D
 https://search.rootyeprely.live/rixjttmh/?u1=d202mrd&o1=udrbv9v&f=1&sid=t2~aytpdsbwdvuar5n1yrrbidcx&fp=bAZ5KjEuNl%2BLTwcYkGFZrg%3D%3D
 https://search.rootyeprely.live/xrmsdmsj/?u1=d202mrd&o1=udrbv9v&f=1&sid=t4~e4n5atqi5oe035lmdixjiz1w&fp=116UeNVSgOWTIwhauBzE9w%3D%3D
+https://n0pkf36.rootyeprely.live/jfllspee/?u=63fkp0n&o=uh7pmz8&f=1&sid=t4~f02sqjvpvowjceawo4lrm4te&fp=TlL9VHQ7gqx%2FM3ZQUta%2Bcw%3D%3D
+https://search.usergoldvice.live/mqqdtkqg/?u1=d202mrd&o1=udrbv9v&f=1&sid=t4~ovngrpnklemyiadrmtv1xzld&fp=vFt2QwcagRA%2FMdWkpQJnxg%3D%3D
 ...
 """
 
@@ -125,7 +127,7 @@ for _ in range(1000000):
 
     # SAVE LOG
     updateLOG()
-    time.sleep(8)  # Espera 0.4 segundos entre recargas para no sobrecargar
+    time.sleep(100)  # Espera 0.4 segundos entre recargas para no sobrecargar
 
 # Cierra el navegador
 driver.quit()
