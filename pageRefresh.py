@@ -15,7 +15,7 @@ _url = "https://chatgpt.com/"
 
 for _ in range(1000000):
     driver.get(_url)
-    time.sleep(0.5)
+    time.sleep(0.3)
 
 
 driver.quit()

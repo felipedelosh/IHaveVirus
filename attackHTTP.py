@@ -15,18 +15,7 @@ Esto es para tratar de defenderme
 """
 URL attacks me:
 
-https://n0pkf36.findpubdue.live/lqkcgvut/?u=63fkp0n&o=uh7pmz8&f=1&sid=t1~t0edj5cp4iejludsvza1vobl&fp=Md%2Bb%2FogcsL6hTN%2FIdl07EQ%3D%3D
-https://n0pkf36.findpubdue.live/vnjpymod/?u=63fkp0n&o=uh7pmz8&f=1&sid=t2~saav2u21tvhgu0fe4vblc3jh&fp=PgJxGtpSbeXystT1Izv8Cg%3D%3D
-https://n0pkf36.aycanrem.live/xyxnihui/?u=63fkp0n&o=uh7pmz8&f=1&sid=t4~kyaz4wemqibazztgozu52xnv&fp=6Hsu7We1SMxgE36BjBtYvw%3D%3D
-https://n0pkf36.aycanrem.live/fbnopstn/?u=63fkp0n&o=uh7pmz8&f=1&sid=t1~zfansszdwb3csgk5fbxp5v40&fp=0zNK8x040n85RsPDbQRlbw%3D%3D
-https://n0pkf36.lastwayking.live/vplsqjcq/?u=63fkp0n&o=uh7pmz8&f=1&sid=t2~3hentehcpiyfynvjwarxwsvm&fp=J0tGtZLaeppAA9svwVencw%3D%3D
-https://n0pkf36.lastwayking.live/ounuqvsi/?u=63fkp0n&o=uh7pmz8&f=1&sid=t1~dem2e4bc4fujgn033wkb2r2u&fp=dZgngM70hemNUGuErnKGCA%3D%3D
-https://n0pkf36.lastwayking.live/chdthuix/?u=63fkp0n&o=uh7pmz8&f=1&sid=t1~dem2e4bc4fujgn033wkb2r2u&fp=MlFTGuXKlT25neTD1K7eBA%3D%3D
-https://search.rootyeprely.live/rixjttmh/?u1=d202mrd&o1=udrbv9v&f=1&sid=t2~aytpdsbwdvuar5n1yrrbidcx&fp=bAZ5KjEuNl%2BLTwcYkGFZrg%3D%3D
-https://search.rootyeprely.live/xrmsdmsj/?u1=d202mrd&o1=udrbv9v&f=1&sid=t4~e4n5atqi5oe035lmdixjiz1w&fp=116UeNVSgOWTIwhauBzE9w%3D%3D
-https://n0pkf36.rootyeprely.live/jfllspee/?u=63fkp0n&o=uh7pmz8&f=1&sid=t4~f02sqjvpvowjceawo4lrm4te&fp=TlL9VHQ7gqx%2FM3ZQUta%2Bcw%3D%3D
-https://search.usergoldvice.live/mqqdtkqg/?u1=d202mrd&o1=udrbv9v&f=1&sid=t4~ovngrpnklemyiadrmtv1xzld&fp=vFt2QwcagRA%2FMdWkpQJnxg%3D%3D
-...
+ListURL.txt
 """
 
 options = Options()
@@ -64,8 +53,8 @@ _FAKE_PAGES_LIST = [
     "kihisee.live",
     "rootyeprely.live"
 ]
-_user = "rixjttmh" # User change every week
-_o = "uh7pmz8" # O Change every week
+_user = "63fkp0n"
+_o = "uh7pmz8"
 
 def calculateNewUser(qty_letters_usser):
     """
@@ -103,9 +92,7 @@ def getRndFakePage():
 # Examples
 # IP+ USER + PARAMS
 def finalDestinationUrl():
-    # WARNING PARAMS CHANGE u > u1
-    # WARNING PARAMS CHANGE o > o1
-    return f"http://{_ip}/{calculateNewUser(8)}/?u1={_user}&o1={_o}&f=1{getSecurityToken()}"
+    return f"http://{_ip}/{calculateNewUser(8)}/?u={_user}&o={_o}&f=1{getSecurityToken()}"
 
 
 # Recarga la página varias veces
