@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+	<meta name="robots" content="noindex, nofollow"/>
+	<title id="title">Spookchat</title>
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+</head>
+
+<body>
+
+<header class="b-head">
+	<div class="container-fluid">
+		<div class="row center-xs">
+			<div class="col-xs-12 col-md-8">
+				<div class="in">
+					<a href="#" class="logo">
+						<img class="logo-image" src="images/logo_land.png" alt=""/>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<div id="vb-overlay0" class="container-fluid">
+	<div class="row center-xs">
+		<div class="q col-xs-12 col-md-8" id="q0">
+			<div class="content">
+				<img class="image2 btn-step1" src="images/image.png" alt=""/>
+
+				<h2 class="title" id="text01">Tell us who you are</h2>
+
+				<div class="buttondiv">
+					<button class="btn-step1 btn-step1-man" id="text02">I'm a guy</button>
+					<button class="btn-step1 btn-step1-woman" id="text03">I'm a girl</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="vb-overlay" class="vb-overlay vbrf4 rfm2_1" style="display: none;">
+	<div data-target="content" class="content-wrap">
+		<div class="vb__b-lp_popup">
+			<div class="content_land">
+				<div class="form-container reg-form">
+					<form novalidate="novalidate" method="post" id="serialization_form" data-info="vb-landing-form">
+						<ul class="btns clearfix">
+							<li class="step1 current">1</li>
+							<li class="step2">2</li>
+							<li class="step3">3</li>
+						</ul>
+
+						<div id="view1" class="view">
+							<label class="step__label" id="text04">Because you will see explicit images, we need to know that you are over 18.</label>
+
+							<label class="step__label" id="text05">Confirm you are <strong>over 18</strong> to continue.</label>
+
+							<div class="step__field">
+								<input class="step__field__input" id="age" name="age" type="tel" ng-model="age" />
+								<div class="step__field__placeholder" data-placeholder="age" id="text06">Enter Age</div>
+							</div>
+
+							<div class="error"></div>
+
+							<a href="#" class="btn-next" id="text07">Next</a>
+						</div>
+
+						<div id="view2" class="view" style="display: none;">
+							<label class="step__label step__label_extra" id="text08">Start meeting local girls now, <strong>choose a password.</strong></label>
+
+							<div class="step__field">
+								<input class="step__field__input" id="password" name="password" type="password" ng-model="password" />
+								<div class="step__field__placeholder" data-placeholder="password" id="text09">Choose a Password</div>
+
+								<div class="field__show">
+									<img class="field__show__eyeoff" src="images/eye-off.svg">
+									<img class="field__show__eyeon" src="images/eye-on.svg">
+								</div>
+							</div>
+
+							<div class="error"></div>
+
+							<a href="#" class="btn-next" id="text10">Next</a>
+						</div>
+
+						<div id="view3" class="view" style="display: none;">
+							<label class="step__label">
+								<span id="text11">Your preferences have been saved.</span>
+								<br/>
+								<span id="text12"><strong>Enter your email</strong> below to start hooking up with local girls!</span>
+							</label>
+
+							<div class="step__field">
+								<input class="step__field__input" id="email" name="email" type="email" ng-model="email" />
+								<div class="step__field__placeholder" data-placeholder="email" id="text13">Enter Email Address</div>
+							</div>
+
+							<div class="error"></div>
+
+							<a href="#" class="btn-next btn-signup" id="text14">Continue</a>
+						</div>
+					</form>
+
+					<div class="success-message" id="success-message" style="display: none;">
+						<p><span id="text15">Please, complete your registration by clicking the confirmation link sent to:</span> <span id="success-mail"></span></p>
+						<p id="text16">Please note! The email may take a few minutes to arrive.</p>
+						<p>
+							<strong id="text17">Important:</strong> <br>
+							<span id="text18">If you don't see the confirmation email in your «inbox» folder 5-10 minutes after your registration, please check your «spam/junk» folder.</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="js/trls.js?v=1.1"></script>
+
+<script src="js/main.js?v=1.1"></script>
+<script src="/js/utils.js" type="text/javascript"></script>
+<script src="/js/fprint2.min.js" type="text/javascript"></script>
+
+<script>
+    var optPushMethod = "chat_popup_ext_subscribe_v2";
+    var optPush = {        
+		extNameAge: "Ashley, 26",
+		extImageUrl: "images/susan37_big2.jpg",
+	    extTpl: 2,
+		confirmImgUrl: "/js/push-ml/images/susan37_ico2.jpg",
+        confirmTitle: "Hiiii, what r u doing? I'm fucking myself right now ;) Join me in chat???",
+		confirmMessage: "Ashley, 26",
+		confirmBtnClose: "Later",
+		confirmBtnAllow: "Chat now",
+		confirmStyle: "lp-confirm-style2"
+    };
+</script>
+<script src="/js/push-ml/notification-ext.js"></script>
+
+
+</body>
+</html>

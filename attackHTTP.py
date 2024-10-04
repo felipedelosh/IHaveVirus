@@ -113,8 +113,8 @@ for _ in range(1000000):
             print(f"error:{_url}")
 
     # SAVE LOG
-    updateLOG()
-    time.sleep(100)  # Espera 0.4 segundos entre recargas para no sobrecargar
+    #updateLOG()
+    time.sleep(0.2)  # Espera 0.4 segundos entre recargas para no sobrecargar
 
 # Cierra el navegador
 driver.quit()

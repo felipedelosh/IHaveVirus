@@ -19,13 +19,13 @@ def verificar_directorio(base_url, rutas):
             print(f"Error al acceder a {url}: {e}")
 
 # URL base del servidor
-base_url = "http://89.208.107.49/"
+base_url = "http://185.155.184.32/"
 
 # Lista de posibles rutas de directorios
 rutas = [
-    "directorio1/",
-    "directorio2/",
-    "directorio3/",
+    "media/",
+    "util/",
+    "util/utils.js",
     "ruta/con/subdirectorio/"
 ]
 
