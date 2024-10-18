@@ -14,8 +14,11 @@ _url = "https://chatgpt.com/"
 
 
 for _ in range(1000000):
-    driver.get(_url)
-    time.sleep(0.3)
+    try:
+        driver.get(_url)
+    except:
+        pass
+    time.sleep(0.5)
 
 
 driver.quit()
