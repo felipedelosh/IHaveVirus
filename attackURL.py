@@ -1,24 +1,99 @@
 """
-Creates to decrypt URL
+Creates to analyzed and decrypt UTL
+
+The links hav next structure:
+
+https://[root_host].[disponsable_url]/[A-Z]8/?u=[_usr]&o=[_oauth]&f=1&sid=[tX~[TOKEN]]&fp=[TOKEN]%3D%3D
 """
 import urllib.parse
 import base64
+import json
 
-values = [
-    "Md%2Bb%2FogcsL6hTN%2FIdl07EQ%3D%3D",
-    "PgJxGtpSbeXystT1Izv8Cg%3D%3D",
-    "6Hsu7We1SMxgE36BjBtYvw%3D%3D",
-    "0zNK8x040n85RsPDbQRlbw%3D%3D",
-    "J0tGtZLaeppAA9svwVencw%3D%3D",
-    "dZgngM70hemNUGuErnKGCA%3D%3D",
-    "MlFTGuXKlT25neTD1K7eBA%3D%3D",
-    "dZgngM70hemNUGuErnKGCA%3D%3D",
-    "MlFTGuXKlT25neTD1K7eBA%3D%3D",
-    "F9K88mvr%2FweY1MNhqzmHQg%3D%3D",
-    "S9lR09RGUDftIPDo%2FHmcdA%3D%3D",
-    "mVqoaLB4bCGWfQIY7ZjJPw%3D%3D",
-    "MfvzKxsy%2BUko%2F9RoUAwSCw%3D%3D"
-]
+
+_dataLinks = "" # Previuos information of all links
+_root_host = []
+_disponsable_url = []
+_main_8_AZ = []
+_main_tokens = {}
+
+try:
+    with open("zelda.txt", "r", encoding="UTF-8") as f:
+        _dataLinks = f.read()
+except:
+    pass
+
+
+# Update _root_host
+def updateInfoRootHost(url):
+    d = url.split(".")[0]
+    d = d.replace("https://", "")
+
+    if d not in _root_host:
+        _root_host.append(d)
+
+
+# Update _disponsable_url
+def updateInfoDisponsableURL(url):
+    d = url.split("?u=")[0]
+    d = d.replace("https://", "")
+    d = d.split("/")[0]
+    d = d.split(".")
+    d = f"{d[1]}.{d[2]}"
+
+    if d not in _disponsable_url:
+        _disponsable_url.append(d)
+
+
+def updatetInfoMain8Pattern(url):
+    d = url.split(".live/")[1]
+    d = d.split("/")[0]
+
+    if d not in _main_8_AZ:
+        _main_8_AZ.append(d)
+    else:
+        pass
+        #print(f"Duplicated TOKEN: {d}")
+
+def updateMainTokens(arrUrls):
+    # Fill dic
+    for i in _main_8_AZ:
+        _main_tokens[i] = {}
+
+    # Fill credentials info
+    for itter8Token in _main_tokens:
+        for itterURL in arrUrls.split("\n"):
+            if str(itterURL).strip() != "":
+                if itter8Token in itterURL:
+                    # GET sid
+                    sid = itterURL.split("&sid=")[1]
+                    sid = sid.split("&fp=")[0]
+                    # Save
+                    _main_tokens[itter8Token]["sid"] = sid
+                    
+                    # GET fp
+                    fp = itterURL.split("&fp=")[1]
+                    # Save
+                    _main_tokens[itter8Token]["fp"] = fp
+
+    # Save JSON
+    with open('urlTokens.json', 'w', encoding="UTF-8") as archivo:
+        json.dump(_main_tokens, archivo)
+
+    
+if _dataLinks != "":
+    for i in _dataLinks.split("\n"):
+        if str(i).strip() != "":
+            updateInfoRootHost(i)
+            updateInfoDisponsableURL(i)
+            updatetInfoMain8Pattern(i)
+    updateMainTokens(_dataLinks)
+
+
+print("============STATITICS================")
+print(f"ROOT_HOST: {len(_root_host)}")
+print(f"DISPONSABLE_URL: {len(_disponsable_url)}")
+print(f"MAIN 8 TOKENS: {len(_main_8_AZ)}")
+
 
 
 def decode_base64(encoded_str):
@@ -30,9 +105,9 @@ def decode_base64(encoded_str):
     except Exception as e:
         return f"Decoding failed: {e}"
     
-    
 
-for i in values:
-    decoded_fp = urllib.parse.unquote(i)
+for i in _main_tokens:
+    fp = _main_tokens[i]["fp"]
+    decoded_fp = urllib.parse.unquote(fp)
     decoded_content = decode_base64(decoded_fp)
     print(f"ORIGINAL: {i} : Decrypt: {decoded_fp} : Base64: {decoded_content}")
