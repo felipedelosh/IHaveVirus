@@ -108,6 +108,7 @@ def decode_base64(encoded_str):
 
 for i in _main_tokens:
     fp = _main_tokens[i]["fp"]
-    decoded_fp = urllib.parse.unquote(fp)
-    decoded_content = decode_base64(decoded_fp)
-    print(f"ORIGINAL: {i} : Decrypt: {decoded_fp} : Base64: {decoded_content}")
+    print(f"&fp: {fp}, len: {len(fp)}")
+    #decoded_fp = urllib.parse.unquote(fp)
+    #decoded_content = decode_base64(decoded_fp)
+    #print(f"ORIGINAL: {i} : Decrypt: {decoded_fp} : Base64: {decoded_content}")
