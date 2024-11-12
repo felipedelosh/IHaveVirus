@@ -14,7 +14,6 @@ def generate_random_fp():
     return _encoded_fp
 
 
-for fp in range(100):
-    fp = generate_random_fp()
-    print(f"&fp: {fp}, len: {len(fp)}")
-    
+# for fp in range(100):
+#     fp = generate_random_fp()
+#     print(f"&fp: {fp}, len: {len(fp)}")

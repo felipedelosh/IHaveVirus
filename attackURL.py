@@ -1,10 +1,11 @@
 """
-Creates to analyzed and decrypt UTL
+Creates to analyzed and decrypt URL
 
 The links hav next structure:
 
 https://[root_host].[disponsable_url]/[A-Z]8/?u=[_usr]&o=[_oauth]&f=1&sid=[tX~[TOKEN]]&fp=[TOKEN]%3D%3D
 """
+from fpGenerator import generate_random_fp
 import urllib.parse
 import base64
 import json
@@ -96,19 +97,38 @@ print(f"MAIN 8 TOKENS: {len(_main_8_AZ)}")
 
 
 
-def decode_base64(encoded_str):
-    try:
-        # Decodificar Base64
-        decoded_bytes = base64.b64decode(encoded_str)
-        # Decodificar a cadena de texto (si es texto)
-        return decoded_bytes.decode('utf-8', errors='ignore')
-    except Exception as e:
-        return f"Decoding failed: {e}"
+# def decode_base64(encoded_str):
+#     try:
+#         # Decodificar Base64
+#         decoded_bytes = base64.b64decode(encoded_str)
+#         # Decodificar a cadena de texto (si es texto)
+#         return decoded_bytes.decode('utf-8', errors='ignore')
+#     except Exception as e:
+#         return f"Decoding failed: {e}"
     
 
-for i in _main_tokens:
-    fp = _main_tokens[i]["fp"]
-    print(f"&fp: {fp}, len: {len(fp)}")
-    #decoded_fp = urllib.parse.unquote(fp)
-    #decoded_content = decode_base64(decoded_fp)
-    #print(f"ORIGINAL: {i} : Decrypt: {decoded_fp} : Base64: {decoded_content}")
+# for i in _main_tokens:
+#     fp = _main_tokens[i]["fp"]
+#     #print(f"&fp: {fp}, len: {len(fp)}")
+#     decoded_fp = urllib.parse.unquote(fp)
+#     decoded_content = decode_base64(decoded_fp)
+#     print(f"ORIGINAL: {i} : Decrypt: {decoded_fp} : Base64: {decoded_content}")
+
+
+# Try to generate random fp to mach with zelda.txt info
+_counter = 0
+for _ in range(10000000):
+    _rndFP = generate_random_fp()
+    _found = False
+    for i in _main_tokens:
+        if _rndFP == _main_tokens[i]["fp"]:
+            print(f"ENCONTRADO: &fp:{_main_tokens[i]["fp"]} >> RNDFP: {_rndFP}")
+            _found = True
+            break
+        _counter = _counter + 1
+
+    if _found:
+        print(f"Encontrado FP: {_rndFP}")
+        break
+    else:
+        print(f"Inteto: {_counter} rndFP: {_rndFP}")
